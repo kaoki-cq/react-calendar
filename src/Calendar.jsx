@@ -578,7 +578,7 @@ export default class Calendar extends Component {
           onMouseLeave={selectRange ? onMouseLeave : null}
         >
           {this.renderContent()}
-          {showDoubleView && showDoubleMonthryLabel && this.renderNavigation()}
+          {showDoubleView && showDoubleMonthryLabel && this.renderNavigation(true)}
 
           {showDoubleView && this.renderContent(true)}
         </div>
