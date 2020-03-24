@@ -487,6 +487,7 @@ export default class Calendar extends Component {
             onMouseLeave={onMouseLeave}
             showFixedNumberOfWeeks={showFixedNumberOfWeeks || showDoubleView}
             showNeighboringMonth={showNeighboringMonth}
+            showDoubleMonthryLabel={showDoubleMonthryLabel}
             showWeekNumbers={showWeekNumbers}
             {...commonProps}
           />
