@@ -485,9 +485,9 @@ export default class Calendar extends Component {
             formatShortWeekday={formatShortWeekday}
             onClickWeekNumber={onClickWeekNumber}
             onMouseLeave={onMouseLeave}
+            showDoubleMonthryLabel={showDoubleMonthryLabel}
             showFixedNumberOfWeeks={showFixedNumberOfWeeks || showDoubleView}
             showNeighboringMonth={showNeighboringMonth}
-            showDoubleMonthryLabel={showDoubleMonthryLabel}
             showWeekNumbers={showWeekNumbers}
             {...commonProps}
           />
@@ -523,7 +523,7 @@ export default class Calendar extends Component {
       prevAriaLabel,
       prevLabel,
       showDoubleView,
-      showDoubleMonthryLabel
+      showDoubleMonthryLabel,
     } = this.props;
 
     return (
@@ -545,12 +545,12 @@ export default class Calendar extends Component {
         prev2Label={prev2Label}
         prevAriaLabel={prevAriaLabel}
         prevLabel={prevLabel}
+        secoundMonth={secound}
         setActiveStartDate={this.setActiveStartDate}
+        showDoubleMonthryLabel={showDoubleMonthryLabel}
         showDoubleView={showDoubleView}
         view={view}
         views={views}
-        showDoubleMonthryLabel={showDoubleMonthryLabel}
-        secoundMonth={secound}
       />
     );
   }
@@ -638,6 +638,7 @@ Calendar.propTypes = {
   prevLabel: PropTypes.node,
   returnValue: PropTypes.oneOf(['start', 'end', 'range']),
   selectRange: PropTypes.bool,
+  showDoubleMonthryLabel: PropTypes.bool,
   showDoubleView: PropTypes.bool,
   showFixedNumberOfWeeks: PropTypes.bool,
   showNavigation: PropTypes.bool,
