@@ -471,6 +471,7 @@ export default class Calendar extends Component {
           formatShortWeekday,
           onClickWeekNumber,
           showDoubleView,
+          showDoubleMonthryLabel,
           showFixedNumberOfWeeks,
           showNeighboringMonth,
           showWeekNumbers,
@@ -496,7 +497,7 @@ export default class Calendar extends Component {
     }
   }
 
-  renderNavigation() {
+  renderNavigation(secound) {
     const { showNavigation } = this.props;
 
     if (!showNavigation) {
@@ -521,6 +522,7 @@ export default class Calendar extends Component {
       prevAriaLabel,
       prevLabel,
       showDoubleView,
+      showDoubleMonthryLabel
     } = this.props;
 
     return (
@@ -546,6 +548,8 @@ export default class Calendar extends Component {
         showDoubleView={showDoubleView}
         view={view}
         views={views}
+        showDoubleMonthryLabel={showDoubleMonthryLabel}
+        secoundMonth={secound}
       />
     );
   }
@@ -571,6 +575,8 @@ export default class Calendar extends Component {
           onMouseLeave={selectRange ? onMouseLeave : null}
         >
           {this.renderContent()}
+          {showDoubleView && showDoubleMonthryLabel && this.renderNavigation()}
+
           {showDoubleView && this.renderContent(true)}
         </div>
       </div>
