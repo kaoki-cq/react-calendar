@@ -556,7 +556,9 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { className, selectRange, showDoubleView } = this.props;
+    const {
+      className, selectRange, showDoubleView, showDoubleMonthryLabel,
+    } = this.props;
     const { onMouseLeave, value } = this;
     const valueArray = [].concat(value);
 
