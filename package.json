@@ -1,5 +1,5 @@
 {
-  "name": "@kaoki-cq/react-calendar",
+  "name": "react-calendar",
   "version": "3.0.0",
   "description": "Ultimate calendar for your React app.",
   "main": "dist/umd/index.js",
