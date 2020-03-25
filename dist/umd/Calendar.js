@@ -512,7 +512,7 @@ var Calendar = /*#__PURE__*/function (_Component) {
                 formatShortWeekday = _this$props6.formatShortWeekday,
                 onClickWeekNumber = _this$props6.onClickWeekNumber,
                 showDoubleView = _this$props6.showDoubleView,
-                showDoubleMonthryLabel = _this$props6.showDoubleMonthryLabel,
+                showSeparateMonthLabel = _this$props6.showSeparateMonthLabel,
                 showFixedNumberOfWeeks = _this$props6.showFixedNumberOfWeeks,
                 showNeighboringMonth = _this$props6.showNeighboringMonth,
                 showWeekNumbers = _this$props6.showWeekNumbers;
@@ -523,9 +523,9 @@ var Calendar = /*#__PURE__*/function (_Component) {
               formatShortWeekday: formatShortWeekday,
               onClickWeekNumber: onClickWeekNumber,
               onMouseLeave: onMouseLeave,
-              showDoubleMonthryLabel: showDoubleMonthryLabel,
               showFixedNumberOfWeeks: showFixedNumberOfWeeks || showDoubleView,
               showNeighboringMonth: showNeighboringMonth,
+              showSeparateMonthLabel: showSeparateMonthLabel,
               showWeekNumbers: showWeekNumbers
             }, commonProps));
           }
@@ -563,7 +563,7 @@ var Calendar = /*#__PURE__*/function (_Component) {
           prevAriaLabel = _this$props7.prevAriaLabel,
           prevLabel = _this$props7.prevLabel,
           showDoubleView = _this$props7.showDoubleView,
-          showDoubleMonthryLabel = _this$props7.showDoubleMonthryLabel;
+          showSeparateMonthLabel = _this$props7.showSeparateMonthLabel;
       return _react["default"].createElement(_Navigation["default"], {
         activeStartDate: activeStartDate,
         drillUp: this.drillUp,
@@ -584,8 +584,8 @@ var Calendar = /*#__PURE__*/function (_Component) {
         prevLabel: prevLabel,
         secoundMonth: secound,
         setActiveStartDate: this.setActiveStartDate,
-        showDoubleMonthryLabel: showDoubleMonthryLabel,
         showDoubleView: showDoubleView,
+        showSeparateMonthLabel: showSeparateMonthLabel,
         view: view,
         views: views
       });
@@ -597,7 +597,7 @@ var Calendar = /*#__PURE__*/function (_Component) {
           className = _this$props8.className,
           selectRange = _this$props8.selectRange,
           showDoubleView = _this$props8.showDoubleView,
-          showDoubleMonthryLabel = _this$props8.showDoubleMonthryLabel;
+          showSeparateMonthLabel = _this$props8.showSeparateMonthLabel;
       var onMouseLeave = this.onMouseLeave,
           value = this.value;
       var valueArray = [].concat(value);
@@ -607,7 +607,7 @@ var Calendar = /*#__PURE__*/function (_Component) {
         className: "".concat(baseClassName, "__viewContainer"),
         onBlur: selectRange ? onMouseLeave : null,
         onMouseLeave: selectRange ? onMouseLeave : null
-      }, this.renderContent(), showDoubleView && showDoubleMonthryLabel && this.renderNavigation(true), showDoubleView && this.renderContent(true)));
+      }, this.renderContent(), showDoubleView && showSeparateMonthLabel && this.renderNavigation(true), showDoubleView && this.renderContent(true)));
     }
   }, {
     key: "activeStartDate",
@@ -732,7 +732,7 @@ Calendar.propTypes = {
   prevLabel: _propTypes["default"].node,
   returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
   selectRange: _propTypes["default"].bool,
-  showDoubleMonthryLabel: _propTypes["default"].bool,
+  showSeparateMonthLabel: _propTypes["default"].bool,
   showDoubleView: _propTypes["default"].bool,
   showFixedNumberOfWeeks: _propTypes["default"].bool,
   showNavigation: _propTypes["default"].bool,

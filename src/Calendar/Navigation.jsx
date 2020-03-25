@@ -30,7 +30,7 @@ export default function Navigation({
   minDate,
   navigationAriaLabel = '',
   navigationLabel,
-  showDoubleMonthryLabel,
+  showSeparateMonthLabel,
   next2AriaLabel = '',
   next2Label = '»',
   nextAriaLabel = '',
@@ -178,7 +178,7 @@ export default function Navigation({
         type="button"
       >
         {renderLabel(activeStartDate)}
-        {!showDoubleMonthryLabel && showDoubleView && (
+        {!showSeparateMonthLabel && showDoubleView && (
           <>
             {' '}
             –
@@ -231,7 +231,7 @@ Navigation.propTypes = {
   prevLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   secoundMonth: PropTypes.bool,
   setActiveStartDate: PropTypes.func.isRequired,
-  showDoubleMonthryLabel: PropTypes.bool,
+  showSeparateMonthLabel: PropTypes.bool,
   showDoubleView: PropTypes.bool,
   view: isView.isRequired,
   views: isViews.isRequired,

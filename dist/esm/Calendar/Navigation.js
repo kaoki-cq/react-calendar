@@ -18,7 +18,7 @@ export default function Navigation(_ref) {
       _ref$navigationAriaLa = _ref.navigationAriaLabel,
       navigationAriaLabel = _ref$navigationAriaLa === void 0 ? '' : _ref$navigationAriaLa,
       navigationLabel = _ref.navigationLabel,
-      showDoubleMonthryLabel = _ref.showDoubleMonthryLabel,
+      showSeparateMonthLabel = _ref.showSeparateMonthLabel,
       _ref$next2AriaLabel = _ref.next2AriaLabel,
       next2AriaLabel = _ref$next2AriaLabel === void 0 ? '' : _ref$next2AriaLabel,
       _ref$next2Label = _ref.next2Label,
@@ -156,7 +156,7 @@ export default function Navigation(_ref) {
       flexGrow: 1
     },
     type: "button"
-  }, renderLabel(activeStartDate), !showDoubleMonthryLabel && showDoubleView && React.createElement(React.Fragment, null, ' ', "\u2013", ' ', renderLabel(nextActiveStartDate))), React.createElement("button", {
+  }, renderLabel(activeStartDate), !showSeparateMonthLabel && showDoubleView && React.createElement(React.Fragment, null, ' ', "\u2013", ' ', renderLabel(nextActiveStartDate))), React.createElement("button", {
     "aria-label": nextAriaLabel,
     className: "".concat(className, "__arrow ").concat(className, "__next-button"),
     disabled: nextButtonDisabled,
@@ -190,7 +190,7 @@ Navigation.propTypes = {
   prevLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   secoundMonth: PropTypes.bool,
   setActiveStartDate: PropTypes.func.isRequired,
-  showDoubleMonthryLabel: PropTypes.bool,
+  showSeparateMonthLabel: PropTypes.bool,
   showDoubleView: PropTypes.bool,
   view: isView.isRequired,
   views: isViews.isRequired

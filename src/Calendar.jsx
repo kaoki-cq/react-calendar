@@ -471,7 +471,7 @@ export default class Calendar extends Component {
           formatShortWeekday,
           onClickWeekNumber,
           showDoubleView,
-          showDoubleMonthryLabel,
+          showSeparateMonthLabel,
           showFixedNumberOfWeeks,
           showNeighboringMonth,
           showWeekNumbers,
@@ -485,9 +485,9 @@ export default class Calendar extends Component {
             formatShortWeekday={formatShortWeekday}
             onClickWeekNumber={onClickWeekNumber}
             onMouseLeave={onMouseLeave}
-            showDoubleMonthryLabel={showDoubleMonthryLabel}
             showFixedNumberOfWeeks={showFixedNumberOfWeeks || showDoubleView}
             showNeighboringMonth={showNeighboringMonth}
+            showSeparateMonthLabel={showSeparateMonthLabel}
             showWeekNumbers={showWeekNumbers}
             {...commonProps}
           />
@@ -523,7 +523,7 @@ export default class Calendar extends Component {
       prevAriaLabel,
       prevLabel,
       showDoubleView,
-      showDoubleMonthryLabel,
+      showSeparateMonthLabel,
     } = this.props;
 
     return (
@@ -547,8 +547,8 @@ export default class Calendar extends Component {
         prevLabel={prevLabel}
         secoundMonth={secound}
         setActiveStartDate={this.setActiveStartDate}
-        showDoubleMonthryLabel={showDoubleMonthryLabel}
         showDoubleView={showDoubleView}
+        showSeparateMonthLabel={showSeparateMonthLabel}
         view={view}
         views={views}
       />
@@ -557,7 +557,7 @@ export default class Calendar extends Component {
 
   render() {
     const {
-      className, selectRange, showDoubleView, showDoubleMonthryLabel,
+      className, selectRange, showDoubleView, showSeparateMonthLabel,
     } = this.props;
     const { onMouseLeave, value } = this;
     const valueArray = [].concat(value);
@@ -578,7 +578,7 @@ export default class Calendar extends Component {
           onMouseLeave={selectRange ? onMouseLeave : null}
         >
           {this.renderContent()}
-          {showDoubleView && showDoubleMonthryLabel && this.renderNavigation(true)}
+          {showDoubleView && showSeparateMonthLabel && this.renderNavigation(true)}
 
           {showDoubleView && this.renderContent(true)}
         </div>
@@ -640,7 +640,7 @@ Calendar.propTypes = {
   prevLabel: PropTypes.node,
   returnValue: PropTypes.oneOf(['start', 'end', 'range']),
   selectRange: PropTypes.bool,
-  showDoubleMonthryLabel: PropTypes.bool,
+  showSeparateMonthLabel: PropTypes.bool,
   showDoubleView: PropTypes.bool,
   showFixedNumberOfWeeks: PropTypes.bool,
   showNavigation: PropTypes.bool,
